@@ -2,6 +2,7 @@ package com.andreytech.teste_springboot.config;
 
 import com.andreytech.teste_springboot.entities.Order;
 import com.andreytech.teste_springboot.entities.User;
+import com.andreytech.teste_springboot.entities.enums.OrderStatus;
 import com.andreytech.teste_springboot.repositories.OrderRepository;
 import com.andreytech.teste_springboot.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +29,9 @@ public class TestConfig implements CommandLineRunner {
         User user1 = new User(null, "Andrey Nicollas", "andrey@gmail.com", "11111", "12345");
         User user2 = new User(null, "Carlos Eduardo", "eduardo@gmail.com", "99999", "678910");
 
-        Order order1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"), user1);
-        Order order2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), user2);
-        Order order3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), user1);
+        Order order1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"), OrderStatus.PAID, user1);
+        Order order2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), OrderStatus.WAITING_PAYMENT, user2);
+        Order order3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), OrderStatus.WAITING_PAYMENT, user1);
 
         // Salvando os dois objetos no banco de dados
         userRepository.saveAll(Arrays.asList(user1, user2));
