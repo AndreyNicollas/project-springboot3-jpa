@@ -1,14 +1,8 @@
 package com.andreytech.teste_springboot.config;
 
-import com.andreytech.teste_springboot.entities.Category;
-import com.andreytech.teste_springboot.entities.Order;
-import com.andreytech.teste_springboot.entities.Product;
-import com.andreytech.teste_springboot.entities.User;
+import com.andreytech.teste_springboot.entities.*;
 import com.andreytech.teste_springboot.entities.enums.OrderStatus;
-import com.andreytech.teste_springboot.repositories.CategoryRepository;
-import com.andreytech.teste_springboot.repositories.OrderRepository;
-import com.andreytech.teste_springboot.repositories.ProductRepository;
-import com.andreytech.teste_springboot.repositories.UserRepository;
+import com.andreytech.teste_springboot.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -32,6 +26,9 @@ public class TestConfig implements CommandLineRunner {
 
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private OrderItemRepository orderItemRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -75,5 +72,12 @@ public class TestConfig implements CommandLineRunner {
 
         // Salvando objetos no banco de dados
         orderRepository.saveAll(Arrays.asList(order1, order2, order3));
+
+        OrderItem orderItem1 = new OrderItem(order1, product1, 2, product1.getPrice());
+        OrderItem orderItem2 = new OrderItem(order1, product3, 1, product3.getPrice());
+        OrderItem orderItem3 = new OrderItem(order2, product3, 2, product3.getPrice());
+        OrderItem orderItem4 = new OrderItem(order3, product5, 2, product5.getPrice());
+
+        orderItemRepository.saveAll(Arrays.asList(orderItem1, orderItem2, orderItem3,orderItem4));
     }
 }
