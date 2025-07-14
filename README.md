@@ -36,8 +36,7 @@ O projeto tem como objetivo consolidar conhecimentos sobre o desenvolvimento de 
 
 ## 📌 Licença
 
-Este projeto é de caráter educacional, sem fins comerciais.  
-Pode usá-lo como base para seus estudos ou consultas.
+- Este projeto é de caráter educacional, sem fins comerciais. Pode usá-lo como base para seus estudos ou consultas.
 
 ---
 
