@@ -1,6 +1,6 @@
 # 🚀 Projeto de Estudos com Spring Boot
 
-Este repositório contém meu **primeiro projeto prático de estudos com Spring Boot utilizando Java**, desenvolvido com base nas aulas do Prof. Nelio Alves, por meio de seu curso completo **Web Services com Spring Boot, JPA e Hibernate**, pela plataforma **Udemy**.
+Este repositório contém meu **primeiro projeto prático de estudos com Spring Boot utilizando Java**, desenvolvido com base nas aulas do Prof. Nelio Alves, por meio de seu curso completo **Web Services com Spring Boot, JPA e Hibernate**.
 
 ---
 
